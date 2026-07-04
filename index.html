@@ -29,3 +29,43 @@ DOCTYPE html>
     </footer>
 </body>
 </html>
+<section class="assistant-ia">
+    <h3>🤖 Assistant du site</h3>
+    <div id="zone-chat"></div>
+    <div class="saisie">
+        <input type="text" id="message" placeholder="Pose ta question…">
+        <button onclick="envoyerMessage()">Envoyer</button>
+    </div>
+</section>
+
+<script>
+// Réponses intelligentes préconfigurées
+const reponses = {
+    "défi": "Les défis sont des épreuves variées : quiz, créativité, logique… Chacun rapporte des points selon sa difficulté.",
+    "classement": "Le classement est mis à jour automatiquement : plus tu as de points, plus tu es haut dans la liste !",
+    "récompense": "Les prix sont offerts par nos sponsors : cadeaux, bons, matériel… Tout est gratuit !",
+    "règle": "Les règles sont simples : respecter les dates, ne pas tricher, participer loyalement.",
+    "bonjour": "Bonjour ! Comment puis‑je t’aider aujourd’hui ?"
+};
+
+function envoyerMessage() {
+    const texte = document.getElementById("message").value.toLowerCase();
+    const zone = document.getElementById("zone-chat");
+    let reponse = "Je ne comprends pas bien … Pose‑moi une question sur les défis, classements ou récompenses !";
+
+    // Cherche le mot‑clé dans la question
+    for (let mot in reponses) {
+        if (texte.includes(mot)) {
+            reponse = reponses[mot];
+            break;
+        }
+    }
+
+    // Affiche l’échange
+    zone.innerHTML += `<p><strong>Toi :</strong> ${texte}</p>`;
+    zone.innerHTML += `<p><strong>Assistant :</strong> ${reponse}</p>`;
+    zone.scrollTop = zone.scrollHeight;
+    document.getElementById("message").value = "";
+}
+</script>
+
