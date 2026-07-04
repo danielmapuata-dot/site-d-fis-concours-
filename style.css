@@ -72,3 +72,36 @@ th {
     background: #2c3e50;
     color: white;
 }
+.assistant-ia {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+#zone-chat {
+    height: 200px;
+    overflow-y: auto;
+    background: white;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+.saisie {
+    display: flex;
+    gap: 0.5rem;
+}
+.saisie input {
+    flex: 1;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.saisie button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
